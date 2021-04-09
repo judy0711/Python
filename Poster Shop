@@ -1,0 +1,76 @@
+# Define your functions
+def exoposter_bot():
+  print("Welcome to the EXO poster store!")
+
+  def print_message():
+    print('I\'m sorry, I did not understand your selection.Please enter the corresponding letter for your response.')
+
+  def apply_card():
+    app = input("Do you want to apply for one? \n[a] Yes \n[b] No \n")
+    if app == 'b':
+        print("Okay, got it. Here's your poster! Have a nice day!")
+    if app == 'a':
+        name = input("What is your name?")
+        email = input("What is your email?")
+        print('Alright {}! All done. Congratulations on receiving a discount! Thank you for your purchase! Hope you have a nice day!'.format(name))
+
+
+
+  def get_size():
+    res = input("What poster size do you want? \n[a] 4 x 6 \n[b] A4 \n[c] B5 \n")
+    
+    if res == 'a':
+      return '4 x 6'
+    elif res == 'b':
+      return 'A4'
+    elif res == 'c':
+      return 'B5'
+    else: 
+      print_message()
+      return get_size()
+      
+  def get_type():
+    res = input("Which member's poster do you want? \n[1] Xiumin \n[2] Suho \n[3] Lay \n[4] Baekhyun \n[5] Chen \n[6] Chanyeol \n[7] D.O \n[8] Kai \n[9] Sehun \n")
+    if res =='1':
+      return 'Xiumun'
+    elif res == '2':
+      return 'Suho'
+    elif res == '3':
+      return 'Lay'
+    elif res == '4':
+      return 'Baekhyun'
+    elif res == '5':
+      return 'Chen'
+    elif res == '6':
+      return 'Chanyeol'
+    elif res == '7':
+      return "D.O"
+    elif res == '8':
+      return "Kai"
+    elif res == "9":
+      return "Sehun"
+    else:
+      print_message()
+      return get_type()
+
+  size = get_size()
+  member = get_type()
+  print('Alright, so you want a {} {} poster!'.format(size, member))
+
+  def get_card():
+    card = input("Do you have a membership card for a 10% discount? \n[a] Yes \n[b] No \n")
+    if card == 'a':
+      print("Okay! Congratulations on the discount. Your poster will be ready shortly.") 
+    else:
+      print ("Okay...")
+      return apply_card()
+  card = get_card()
+  return card
+  applycard = apply_card()
+  print(applycard)
+  
+
+
+# Call 
+exoposter_bot()
+
